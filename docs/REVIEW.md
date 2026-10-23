@@ -51,10 +51,12 @@ editing instructions describe the export, not requirements for this repository.
 
 ## Validation
 
-Eight Playwright interaction tests passed in Microsoft Edge: matching-round
+Thirteen Playwright interaction tests passed in Microsoft Edge: matching-round
 completion, mismatch handling and keyboard focus, change confirmation, Glance
 sample updates, eight-picture rounds, interrupted practice with butterfly
-answers, subfolder navigation, and phone-width layout. Formatting checks passed.
+answers, subfolder navigation, and portrait layouts from 320 × 568 to 390 × 844.
+Portrait checks cover every matching-board size, Glance's picture and direction
+answers, picture bounds, and returning to setup. Formatting checks passed.
 Desktop Matching Pairs and mobile Glance screenshots were visually inspected;
 the screenshot pass reported no browser JavaScript errors. This is not a full
 cross-browser or assistive-technology audit.

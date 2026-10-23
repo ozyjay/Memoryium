@@ -102,6 +102,45 @@ a:focus-visible {
   }
 }
 
+@media (max-width: 600px) {
+  header {
+    gap: 8px;
+    padding: 10px 12px;
+  }
+  header .brand {
+    gap: 8px;
+    font-size: 23px;
+  }
+  .brand small {
+    display: none;
+  }
+  main {
+    padding: 14px 12px 20px;
+  }
+  .intro h1 {
+    margin: 6px 0 8px;
+    font-size: clamp(26px, 7.4vw, 34px);
+  }
+  .intro p {
+    font-size: 16px;
+  }
+  .eyebrow {
+    font-size: 11px;
+  }
+  .game-nav {
+    gap: 8px;
+    margin: 12px 0;
+  }
+  .game-nav a {
+    min-height: 44px;
+    padding: 8px 18px;
+    font-size: 16px;
+  }
+  .host-footer {
+    padding: 10px 12px;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

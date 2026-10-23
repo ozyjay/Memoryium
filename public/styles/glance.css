@@ -145,6 +145,16 @@ select {
   max-width: 710px;
   margin: auto;
 }
+.setup-hint {
+  display: none;
+}
+.play-guide {
+  margin: 0;
+  padding-top: 12px;
+}
+.play-guide > summary {
+  color: var(--green);
+}
 .guide li {
   margin: 10px 0;
 }
@@ -402,5 +412,141 @@ details a {
   .insect {
     width: 46px;
     height: 46px;
+  }
+
+  .small-link {
+    max-width: 110px;
+    text-align: right;
+    font-size: 15px !important;
+  }
+  .intro {
+    margin-bottom: 0;
+  }
+  .settings {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 10px;
+    margin-bottom: 12px;
+  }
+  .settings > div:first-child {
+    grid-column: 1 / -1;
+  }
+  .settings > div:has(#spread:disabled) {
+    display: none;
+  }
+  .settings > div {
+    min-width: 0;
+  }
+  label {
+    font-size: 14px;
+    margin-bottom: 4px;
+  }
+  select {
+    min-width: 0;
+    min-height: 48px;
+    padding: 8px 4px;
+    font-size: 16px;
+  }
+  .setup-hint {
+    display: block;
+    margin: 0 0 8px;
+    font-size: 15px;
+    color: var(--muted);
+  }
+  .play-guide {
+    padding-top: 6px;
+    font-size: 15px;
+  }
+  .play-guide > summary {
+    display: list-item;
+    align-content: center;
+  }
+  .samples {
+    gap: 12px;
+  }
+  .samples > div {
+    flex: 0 0 calc(50% - 12px);
+  }
+  .actions {
+    gap: 8px;
+    margin-top: 12px;
+  }
+  #setup > .actions {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .primary,
+  .secondary {
+    min-height: 48px;
+    padding: 9px 12px;
+    font-size: 16px;
+  }
+  .is-playing .intro,
+  .is-playing .game-nav,
+  .is-playing .note {
+    display: none;
+  }
+  .round-top {
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 10px;
+  }
+  .round-top > div {
+    display: flex;
+    gap: 6px;
+  }
+  .round-top .secondary {
+    padding: 8px;
+    font-size: 14px;
+  }
+  .badge {
+    padding: 6px 8px;
+    font-size: 12px;
+  }
+  #round {
+    scroll-margin-top: 12px;
+  }
+  #scene {
+    height: clamp(160px, 28svh, 240px);
+    aspect-ratio: auto;
+  }
+  .trial-instructions {
+    min-height: 0;
+    margin: 10px 0;
+  }
+  #prompt {
+    font-size: 18px;
+  }
+  .trial-instructions p {
+    font-size: 14px;
+  }
+  .flower-choices {
+    gap: 8px;
+  }
+  .flower-button {
+    min-width: 0;
+    padding: 7px 4px;
+    font-size: 15px;
+  }
+  .flower-button svg {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 3px;
+  }
+  .directions {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .directions button {
+    min-width: 0;
+    min-height: 56px;
+    padding: 5px 2px;
+  }
+  #feedback {
+    margin-top: 10px;
+  }
+  #feedback h2 {
+    font-size: 24px;
+  }
+  #feedback p {
+    font-size: 16px;
   }
 }

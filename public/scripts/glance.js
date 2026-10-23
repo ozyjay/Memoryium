@@ -1,5 +1,12 @@
 "use strict";
 const el = (id) => document.getElementById(id);
+const phoneLayout = () => window.matchMedia("(max-width: 600px)").matches;
+el("play-guide").open = !phoneLayout();
+function fitRound() {
+  if (phoneLayout()) {
+    el("round").scrollIntoView({ block: "start", behavior: "instant" });
+  }
+}
 const daisy =
   '<svg viewBox="0 0 100 100" aria-hidden="true"><g fill="#fff" stroke="#8b6b20" stroke-width="2.5"><ellipse cx="50" cy="25" rx="10" ry="20"/><ellipse cx="50" cy="75" rx="10" ry="20"/><ellipse cx="25" cy="50" rx="20" ry="10"/><ellipse cx="75" cy="50" rx="20" ry="10"/><ellipse cx="32" cy="32" rx="10" ry="20" transform="rotate(-45 32 32)"/><ellipse cx="68" cy="32" rx="10" ry="20" transform="rotate(45 68 32)"/><ellipse cx="32" cy="68" rx="10" ry="20" transform="rotate(45 32 68)"/><ellipse cx="68" cy="68" rx="10" ry="20" transform="rotate(-45 68 68)"/></g><circle cx="50" cy="50" r="19" fill="#e5af27" stroke="#785719" stroke-width="3"/></svg>';
 const tulip =
@@ -184,10 +191,14 @@ function ready() {
   el("pause").hidden = false;
   el("pause").disabled = false;
   focus("pause");
-  el("scene").scrollIntoView({ block: "center", behavior: "instant" });
+  el(phoneLayout() ? "round" : "scene").scrollIntoView({
+    block: phoneLayout() ? "start" : "center",
+    behavior: "instant",
+  });
   readyTimer = setTimeout(show, 1400);
 }
 function begin(isPractice) {
+  document.body.classList.add("is-playing");
   practice = isPractice;
   flowers = pictures[el("picture-theme").value];
   task = el("task").value;
@@ -260,6 +271,7 @@ function answerFlower() {
   });
   el("choices").append(row);
   row.firstChild.focus();
+  fitRound();
 }
 function answerPosition() {
   state = "position";
@@ -289,6 +301,7 @@ function answerPosition() {
   });
   el("choices").append(grid);
   grid.firstChild.focus();
+  fitRound();
 }
 function feedback() {
   state = "feedback";
@@ -330,6 +343,7 @@ function feedback() {
       completed === 8 ? "See round summary" : "Next picture";
   }
   focus("next");
+  fitRound();
 }
 function summary() {
   cancelFrame();
@@ -346,6 +360,7 @@ function summary() {
   focus("again");
 }
 function setup() {
+  document.body.classList.remove("is-playing");
   cancelFrame();
   state = "setup";
   trial = null;
@@ -400,6 +415,11 @@ el("end").onclick = setup;
 document.addEventListener("visibilitychange", () => {
   if (document.hidden) pause();
 });
+let viewportWidth = window.innerWidth;
 window.addEventListener("resize", () => {
+  // Mobile browser toolbars change viewport height while scrolling.
+  // Pause when the layout width changes, including device rotation.
+  if (window.innerWidth === viewportWidth) return;
+  viewportWidth = window.innerWidth;
   if (["showing", "flower", "position"].includes(state)) pause();
 });

@@ -61,29 +61,36 @@
               </select>
             </div>
           </div>
-          <div class="guide">
-            <div class="samples" id="samples"></div>
-            <ol>
-              <li>
-                Look towards the <strong>centre</strong> of the picture area.
-              </li>
-              <li>
-                Notice <strong>which picture appears in the centre</strong
-                ><span id="butterfly-guide" hidden
-                  >, and where the butterfly appears</span
-                >.
-              </li>
-              <li>
-                When the picture disappears, answer at your own pace.
-                <strong>There is no time limit for answering.</strong>
-              </li>
-            </ol>
-            <p class="small">
-              Pictures appear and disappear automatically after a short “Get
-              ready” cue. Practice gives you extra viewing time. A short round
-              has eight pictures, with no time limit for answering.
-            </p>
-          </div>
+          <p class="setup-hint">
+            Look at a brief picture, then choose what you saw. Answers are
+            untimed.
+          </p>
+          <details class="play-guide" id="play-guide" open>
+            <summary>How to play &amp; picture guide</summary>
+            <div class="guide">
+              <div class="samples" id="samples"></div>
+              <ol>
+                <li>
+                  Look towards the <strong>centre</strong> of the picture area.
+                </li>
+                <li>
+                  Notice <strong>which picture appears in the centre</strong
+                  ><span id="butterfly-guide" hidden
+                    >, and where the butterfly appears</span
+                  >.
+                </li>
+                <li>
+                  When the picture disappears, answer at your own pace.
+                  <strong>There is no time limit for answering.</strong>
+                </li>
+              </ol>
+              <p class="small">
+                Pictures appear and disappear automatically after a short “Get
+                ready” cue. Practice gives you extra viewing time. A short round
+                has eight pictures, with no time limit for answering.
+              </p>
+            </div>
+          </details>
           <div class="actions">
             <button class="secondary" id="practice">Practise first</button
             ><button class="primary" id="start">Start a short round</button>
@@ -103,7 +110,6 @@
             <p id="hint"></p>
           </div>
           <div id="choices"></div>
-          <div class="actions"></div>
           <div
             id="feedback"
             role="status"
