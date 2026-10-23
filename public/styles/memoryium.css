@@ -1,0 +1,112 @@
+:root {
+  --paper: #faf8f1;
+  --ink: #22483d;
+  --green: #245c4c;
+}
+
+.brand {
+  color: var(--green);
+  text-decoration: none;
+}
+
+.brand small {
+  display: block;
+  margin-top: 2px;
+  color: var(--muted);
+  font:
+    12px/1.4 system-ui,
+    sans-serif;
+  letter-spacing: 0.06em;
+}
+
+header .brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font:
+    27px Georgia,
+    serif;
+}
+
+.brand-mark {
+  color: #a17827;
+  font-size: 38px;
+}
+
+.tag {
+  font:
+    12px/1.5 system-ui,
+    sans-serif;
+  color: var(--muted);
+  letter-spacing: 0.08em;
+}
+
+.game-nav {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin: 25px 0;
+}
+
+.game-nav a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 48px;
+  padding: 9px 22px;
+  border: 1px solid #aec4b4;
+  border-radius: 24px;
+  color: var(--green);
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.game-nav a[aria-current="page"] {
+  color: white;
+  background: var(--green);
+  border-color: var(--green);
+}
+
+.game-nav a:hover {
+  box-shadow: 0 0 0 2px #aec4b4;
+}
+
+a:focus-visible {
+  outline: 4px solid #ab6300;
+  outline-offset: 5px;
+}
+
+.skip-link {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  z-index: 10;
+  padding: 12px 18px;
+  color: white;
+  background: var(--green);
+  border-radius: 8px;
+  transform: translateY(-160%);
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+@media (max-width: 700px) {
+  header .tag {
+    display: none;
+  }
+
+  header .brand {
+    font-size: 23px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}

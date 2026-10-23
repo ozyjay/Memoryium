@@ -1,0 +1,4 @@
+package-lock.json
+docs/source/
+playwright-report/
+test-results/

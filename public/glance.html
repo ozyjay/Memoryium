@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en-AU">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="theme-color" content="#245c4c" />
+    <title>Memoryium · Glance</title>
+    <meta
+      name="description"
+      content="A gentle visual attention game with practice rounds and unhurried answers."
+    />
+    <link rel="stylesheet" href="styles/glance.css" />
+    <link rel="stylesheet" href="styles/memoryium.css" />
+  </head>
+  <body>
+    <header>
+      <a class="brand" href="index.html"
+        ><span class="brand-mark" aria-hidden="true">✿</span
+        ><span>Memoryium<small>Space for a little play</small></span></a
+      ><span class="tag">MATCHING & ATTENTION GAMES</span
+      ><a class="small-link" href="index.html">Play matching pairs</a>
+    </header>
+    <a class="skip-link" href="#main">Skip to game</a>
+    <main id="main">
+      <section class="intro">
+        <div class="eyebrow">Glance</div>
+        <h1>A moment to notice.</h1>
+        <p>
+          Notice the picture. Take in the details.<br />Take your time to
+          answer.
+        </p>
+      </section>
+      <nav class="game-nav" aria-label="Games">
+        <a href="index.html">Matching Pairs</a
+        ><a href="glance.html" aria-current="page">Glance</a>
+      </nav>
+      <section class="panel">
+        <div id="setup">
+          <div class="settings">
+            <div>
+              <label for="picture-theme">Choose your pictures</label
+              ><select id="picture-theme">
+                <option value="garden">In the garden</option>
+                <option value="fruit">Fruit basket</option>
+                <option value="animals">Animal friends</option>
+                <option value="everyday">Everyday things</option>
+              </select>
+            </div>
+            <div>
+              <label for="task">Choose an activity</label
+              ><select id="task">
+                <option value="flower">Spot the picture</option>
+                <option value="both">Picture & butterfly</option>
+              </select>
+            </div>
+            <div>
+              <label for="spread">Butterfly position</label
+              ><select id="spread" disabled>
+                <option value="near">Closer to the centre</option>
+                <option value="wide">Further from the centre</option>
+              </select>
+            </div>
+          </div>
+          <div class="guide">
+            <div class="samples" id="samples"></div>
+            <ol>
+              <li>
+                Look towards the <strong>centre</strong> of the picture area.
+              </li>
+              <li>
+                Notice <strong>which picture appears in the centre</strong
+                ><span id="butterfly-guide" hidden
+                  >, and where the butterfly appears</span
+                >.
+              </li>
+              <li>
+                When the picture disappears, answer at your own pace.
+                <strong>There is no time limit for answering.</strong>
+              </li>
+            </ol>
+            <p class="small">
+              Pictures appear and disappear automatically after a short “Get
+              ready” cue. Practice gives you extra viewing time. A short round
+              has eight pictures, with no time limit for answering.
+            </p>
+          </div>
+          <div class="actions">
+            <button class="secondary" id="practice">Practise first</button
+            ><button class="primary" id="start">Start a short round</button>
+          </div>
+        </div>
+        <div id="round" hidden>
+          <div class="round-top">
+            <span class="badge" id="round-label"></span>
+            <div>
+              <button class="secondary" id="pause">Pause</button>
+              <button class="secondary" id="end">Finish</button>
+            </div>
+          </div>
+          <div id="scene" role="img" aria-label="Picture area"></div>
+          <div class="trial-instructions">
+            <h2 id="prompt" tabindex="-1"></h2>
+            <p id="hint"></p>
+          </div>
+          <div id="choices"></div>
+          <div class="actions"></div>
+          <div
+            id="feedback"
+            role="status"
+            aria-live="polite"
+            aria-atomic="true"
+            hidden
+          ></div>
+          <div class="actions">
+            <button class="primary" id="next" hidden>Next picture</button
+            ><button class="secondary" id="finish-practice" hidden>
+              Finish practice</button
+            ><button class="primary" id="resume" hidden>Continue</button>
+          </div>
+        </div>
+        <div id="summary" hidden>
+          <div class="eyebrow">Round complete</div>
+          <h2>You’ve finished your round</h2>
+          <p class="score" id="score"></p>
+          <p id="score-description"></p>
+          <p class="small" id="progress-note"></p>
+          <div class="actions">
+            <button class="primary" id="again">Play another round</button
+            ><button class="secondary" id="change">Choose an activity</button>
+          </div>
+        </div>
+      </section>
+      <div class="note">
+        An experimental visual attention activity inspired by processing-speed
+        training. It has not been clinically tested and does not measure or
+        diagnose cognitive health.
+        <details>
+          <summary>About this activity</summary>
+          <p>
+            The brief picture presentation is the challenge. Your tapping speed
+            is not scored. Each picture appears automatically after a short
+            preparation cue. Practice uses a longer viewing time. A short round
+            adjusts viewing time gradually according to accuracy. Butterfly
+            distance stays at your chosen setting.
+          </p>
+          <p>
+            Use a comfortable screen size, your usual glasses if needed, and a
+            consistent viewing distance. Screen size and browser timing affect
+            the experience. Display durations are approximate, rather than
+            calibrated clinical measurements. Pause or stop whenever you like.
+          </p>
+          <p>
+            There are no health scores, streaks or leaderboards. Results stay in
+            this open page; this activity sends no game results to a server.
+          </p>
+          <p>
+            The design draws on published
+            <a
+              href="https://doi.org/10.1093/geronb/gby041"
+              target="_blank"
+              rel="noopener"
+              >visual processing and attention training methods</a
+            >. It is our own adaptation, with no established dementia-prevention
+            benefit.
+          </p>
+        </details>
+      </div>
+    </main>
+    <script src="scripts/glance.js" defer></script>
+  </body>
+</html>

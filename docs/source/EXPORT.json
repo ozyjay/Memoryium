@@ -1,0 +1,10 @@
+{
+  "export_date": "2026-10-23",
+  "timezone": "Australia/Brisbane",
+  "source_commit": "a3585d1efbaa4aa46432f58f3fb67aa7f0f0c310",
+  "files": {
+    "dist/glance.html": "d397abed5669abb337312261658d3a4553bb89d880f6f75869e9ef28df0323d6",
+    "dist/glance.js": "9fa496ff7b60e4610d082eb70dd301ecf8b2069dd9d23e732e008e8e70bfb84a",
+    "dist/index.html": "c6d37545c38b18a7357b360d42f25a3e75078219f936dd67028d1d4735a2cc6a"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "name": "memoryium",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Relaxed matching and visual attention games.",
+  "scripts": {
+    "start": "node scripts/serve.mjs",
+    "test": "playwright test",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.64.1",
+    "prettier": "^3.9.10"
+  }
+}
